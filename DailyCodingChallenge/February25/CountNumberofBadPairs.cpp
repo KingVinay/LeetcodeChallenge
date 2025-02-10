@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Using
+// Using Count and diff map to check equal diff
 long long countBadPairs(vector<int>& nums) {
   long long ans = 0;
   unordered_map<int,int> diff;
