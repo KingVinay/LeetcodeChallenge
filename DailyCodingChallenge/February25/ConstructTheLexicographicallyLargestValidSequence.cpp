@@ -7,7 +7,6 @@ vector<int> constructDistancedSequence(int n) {
   return ans;
 }
 
-private:
 bool dfs(int n, int i, int mask, vector<int>& ans) {
   if (i == ans.size())
       return true;
