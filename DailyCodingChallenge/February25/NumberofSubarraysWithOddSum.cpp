@@ -25,3 +25,10 @@ int numOfSubarrays(vector<int>& arr) {
 
   return ans;
 }
+
+int main()
+{
+  vector<int> arr = {1,2,3,4,5};
+  cout << numOfSubarrays(arr) << endl;
+  return 0;
+}
