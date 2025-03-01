@@ -38,4 +38,8 @@ string findDifferentBinaryString(vector<string>& nums) {
 }
 
 int main()
-{}
+{
+    vector<string> nums = {"0011", "1011", "1111"};
+    cout << findDifferentBinaryString(nums) << endl; // "0100"
+    return 0;
+}
