@@ -12,19 +12,24 @@ int numberOfAlternatingGroups(vector<int>& colors, int k) {
   return  ans;
 }
 
-int numberOfAlternatingGroups(vector<int>& colors, int k) {
-  int n = colors.size();
-  int ans = 0, cnt = 0;
-  for (int i = 0; i < 2*n; ++i) {
-      if (i && colors[i % n] == colors[(i - 1) % n]) {
-          cnt = 1;
-      } else {
-          ++cnt;
-      }
-      ans += i >= n && cnt >= k ? 1 : 0;
-  }
-  return ans;
-}
+// int numberOfAlternatingGroups(vector<int>& colors, int k) {
+//   int n = colors.size();
+//   int ans = 0, cnt = 0;
+//   for (int i = 0; i < 2*n; ++i) {
+//       if (i && colors[i % n] == colors[(i - 1) % n]) {
+//           cnt = 1;
+//       } else {
+//           ++cnt;
+//       }
+//       ans += i >= n && cnt >= k ? 1 : 0;
+//   }
+//   return ans;
+// }
 
 int main()
-{}
+{
+  vector<int> colors = {1,0,1,0,1,0};
+  int k = 3;
+  cout<<numberOfAlternatingGroups(colors,k)<<endl;
+  return 0;
+}
