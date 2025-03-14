@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Using Binary Search on And and Difference Array Time - O(n * logn)
+// Using Binary Search on Ans and Difference Array Time - O(n * logn)
 
 bool check(vector<int>& nums, vector<vector<int>>& queries, vector<int> d, int k) {
   for (int i = 0; i < k; ++i) {
