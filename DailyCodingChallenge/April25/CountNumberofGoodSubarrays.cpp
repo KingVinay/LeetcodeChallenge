@@ -18,8 +18,8 @@ long long countGood(vector<int>& nums, int k) {
 
 int main()
 {
-  vector<int> nums = {1, 2, 3, 4, 5};
-  int k = 3;
+  vector<int> nums = {3,1,4,3,2,2,4};
+  int k = 2;
 
   long long result = countGood(nums, k);
   cout << "Number of good subarrays: " << result << endl;
