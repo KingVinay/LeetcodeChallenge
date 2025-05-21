@@ -41,4 +41,21 @@ void setZeroes(vector<vector<int>>& matrix) {
     }
 
 int main()
-{}
+{
+    vector<vector<int>> matrix = {
+        {1, 1, 1},
+        {1, 0, 1},
+        {1, 1, 1}
+    };
+
+    setZeroes(matrix);
+
+    for (const auto& row : matrix) {
+        for (int num : row) {
+            cout << num << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
