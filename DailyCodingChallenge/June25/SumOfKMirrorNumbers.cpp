@@ -1,39 +1,46 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool isPalindrome(string s) {
-        return s == string(s.rbegin(), s.rend());
-    }
+int digit[100];
 
-    string toBaseK(long long num, int k) {
-        string res;
-        while (num > 0) {
-            res += to_string(num % k);
-            num /= k;
+long long kMirror(int k, int n) {
+    auto isPalindrome = [&](long long x) -> bool {
+        int length = -1;
+        while (x) {
+            ++length;
+            digit[length] = x % k;
+            x /= k;
         }
-        reverse(res.begin(), res.end());
-        return res;
-    }
+        for (int i = 0, j = length; i < j; ++i, --j) {
+            if (digit[i] != digit[j]) {
+                return false;
+            }
+        }
+        return true;
+    };
 
-    long long kMirror(int k, int n) {
-        long long sum = 0;
-        int len = 1;
-        while (n > 0) {
-            for (int half = pow(10, (len - 1) / 2); half < pow(10, (len + 1) / 2) && n > 0; ++half) {
-                string h = to_string(half);
-                string r = h;
-                reverse(r.begin(), r.end());
-                string full = h + (len % 2 ? r.substr(1) : r);
-                long long num = stoll(full);
-                if (isPalindrome(toBaseK(num, k))) {
-                    sum += num;
-                    --n;
+    int left = 1, count = 0;
+    long long ans = 0;
+    while (count < n) {
+        int right = left * 10;
+        for (int op = 0; op < 2; ++op) {
+            for (int i = left; i < right && count < n; ++i) {
+                long long combined = i;
+                int x = (op == 0 ? i / 10 : i);
+                while (x) {
+                    combined = combined * 10 + x % 10;
+                    x /= 10;
+                }
+                if (isPalindrome(combined)) {
+                    ++count;
+                    ans += combined;
                 }
             }
-            ++len;
         }
-        return sum;
+        left = right;
     }
+    return ans;
+}
 
 int main()
 {
