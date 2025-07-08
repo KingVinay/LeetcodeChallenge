@@ -25,8 +25,8 @@ int maxValue(vector<vector<int>>& events, int k) {
 int main()
 {
     vector<vector<int>> events = {{1, 2, 50}, {2, 3, 60}, {3, 4, 70}, {1, 2, 30}};
-    int k = 2; // Maximum number of events to attend
+    int k = 2;
     int result = maxValue(events, k);
-    cout << "Maximum value of events that can be attended: " << result << endl; // Output: 110
+    cout << "Maximum value of events that can be attended: " << result << endl;
     return 0;
 }
