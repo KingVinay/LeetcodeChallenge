@@ -1,6 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+struct ListNode {
+    int val;
+    ListNode* next;
+    ListNode(int x) : val(x), next(nullptr) {}
+};
+
 int getDecimalValue(ListNode* head) {
     int ans = 0;
 
